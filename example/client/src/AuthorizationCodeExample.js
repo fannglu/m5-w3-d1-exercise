@@ -6,7 +6,7 @@ import {
   clientId,
   redirectUri,
   serverUrl
-} from './settings.sample';
+} from './settings-code';
 
 export default function AuthorizationCodeExample() {
   const [accessToken, setAccessToken] = useState(null);

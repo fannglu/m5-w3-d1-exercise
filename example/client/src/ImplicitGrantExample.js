@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import OAuth2Login from "../../../src/OAuth2Login";
 import ErrorAlert from "./ErrorAlert";
-import { authorizationUrl, clientId, redirectUri } from "./settings.sample";
+import { authorizationUrl, clientId, redirectUri } from "./settings-implicit";
 
 export default function ImplicitGrantExample() {
   const [accessToken, setAccessToken] = useState(null);
