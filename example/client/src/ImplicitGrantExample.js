@@ -1,11 +1,7 @@
-import React, { useState } from 'react';
-import OAuth2Login from '../../../src/OAuth2Login';
-import ErrorAlert from './ErrorAlert';
-import {
-  authorizationUrl,
-  clientId,
-  redirectUri,
-} from './settings-implicit';
+import React, { useState } from "react";
+import OAuth2Login from "../../../src/OAuth2Login";
+import ErrorAlert from "./ErrorAlert";
+import { authorizationUrl, clientId, redirectUri } from "./settings.sample";
 
 export default function ImplicitGrantExample() {
   const [accessToken, setAccessToken] = useState(null);
@@ -14,9 +10,7 @@ export default function ImplicitGrantExample() {
   const onSuccess = ({ access_token: token }) => setAccessToken(token);
   return (
     <div className="column">
-      {
-        error && <ErrorAlert error={error} />
-      }
+      {error && <ErrorAlert error={error} />}
       <OAuth2Login
         authorizationUrl={authorizationUrl}
         clientId={clientId}
@@ -26,9 +20,7 @@ export default function ImplicitGrantExample() {
         onSuccess={onSuccess}
         onFailure={setError}
       />
-      {
-        accessToken && <p>Access token: {accessToken}</p>
-      }
+      {accessToken && <p>Access token: {accessToken}</p>}
     </div>
   );
 }
